@@ -34,7 +34,7 @@ function Products() {
           "https://strapi-store-server.onrender.com/api/products"
         );
         const data = await response.json();
-        const products: Product[] = data.data.map((item: any) => ({
+        const products: Product[] = data.data.map((item:any) => ({
           id: item.id,
           title: item.attributes.title,
           category: item.attributes.category,

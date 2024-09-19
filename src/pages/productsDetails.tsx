@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 interface Product {
@@ -35,7 +35,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ addToCart }) => {
           title: productData.attributes.title,
           category: productData.attributes.category,
           company: productData.attributes.company,
-          price: parseInt(productData.attributes.price),
+          price: parseInt(productData.attributes.price, 10), // Ensure price is a number
           shipping: productData.attributes.shipping,
           image: productData.attributes.image,
           description: productData.attributes.description,
@@ -87,9 +87,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ addToCart }) => {
               <button
                 onClick={() => setSelectedColor("yellow")}
                 className={`w-6 h-6 rounded-full bg-yellow-500 ${
-                  selectedColor === "yellow"
-                    ? "ring-2 ring-offset-2 ring-yellow-500"
-                    : ""
+                  selectedColor === "yellow" ? "ring-2 ring-offset-2 ring-yellow-500" : ""
                 }`}
               ></button>
             </div>
