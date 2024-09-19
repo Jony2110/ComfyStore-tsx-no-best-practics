@@ -8,7 +8,8 @@ interface Product {
   id: number;
   name: string;
   price: number;
-
+  color?: string;  // Optional properties
+  amount?: number; // Optional properties
 }
 
 interface UserContextProps {
@@ -33,7 +34,7 @@ export const ThemeContext = createContext<ThemeContextProps | undefined>(undefin
 function App() {
   const [cartItems, setCartItems] = useState<Product[]>([]);
 
-  const addToCart = (product: Product) => {
+  const addToCart = (product: Product & { color: string; amount: number; }) => {
     setCartItems([...cartItems, product]);
   };
 
