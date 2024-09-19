@@ -1,10 +1,10 @@
-import { useContext, MouseEvent } from 'react';
+import {  MouseEvent } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import {  ThemeContext } from '../App';
+
 
 const Headers: React.FC = () => {
   
-  const theme = useContext(ThemeContext);
+ 
  
 
  
@@ -13,7 +13,7 @@ const Headers: React.FC = () => {
     const themeMode = (event.target as HTMLInputElement).checked ? 'dark' : 'light';
     document.querySelector('html')?.setAttribute('data-theme', themeMode);
     localStorage.setItem('theme', themeMode);
-    theme.setTheme(themeMode);
+    
   };
 
  
