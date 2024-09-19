@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect, ReactNode } from 'react';
+import { useState, createContext, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layout/MainLayout';
 import Products from './pages/Products';
